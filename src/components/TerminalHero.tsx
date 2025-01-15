@@ -4,7 +4,26 @@ import { Terminal, FileText, Brain, Sparkles } from "lucide-react";
 
 export const TerminalHero = () => {
   const [displayedText, setDisplayedText] = useState("");
-  const fullText = "/sync/agent > analyze patient_records\n\nInitializing AI agent...\nAccessing medical database...\nOptimizing documentation flow...\nGenerating smart templates...\n\n/sync/agent > Ready for autonomous assistance_";
+  const fullText = `/medical/docs > ls
+analyzing directory contents...
+
+PATIENT_RECORDS/
+  ├── clinical_notes.md
+  ├── lab_results.json
+  ├── medical_history/
+  └── prescriptions.yaml
+
+/medical/docs > analyze clinical_notes.md
+initializing sync agent...
+
+🤖 AI Analysis in Progress:
+  ► Processing natural language content
+  ► Extracting key medical insights
+  ► Generating structured data
+  ► Validating against medical standards
+
+✓ Analysis complete. Found 3 optimization opportunities.
+Ready for autonomous documentation assistance_`;
 
   useEffect(() => {
     let index = 0;
@@ -15,7 +34,7 @@ export const TerminalHero = () => {
       } else {
         clearInterval(timer);
       }
-    }, 50);
+    }, 40);
 
     return () => clearInterval(timer);
   }, []);
@@ -37,7 +56,7 @@ export const TerminalHero = () => {
               <div className="w-3 h-3 rounded-full bg-secondary" />
               <div className="w-3 h-3 rounded-full bg-accent" />
             </div>
-            <pre className="font-mono text-primary text-lg">
+            <pre className="font-mono text-primary text-sm whitespace-pre-wrap break-words">
               {displayedText}
               <span className="animate-pulse">|</span>
             </pre>
@@ -46,16 +65,16 @@ export const TerminalHero = () => {
           <div className="text-center space-y-6">
             <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-4 py-2 mb-6">
               <Brain className="w-5 h-5 text-primary animate-pulse" />
-              <span className="text-primary/90">Autonomous AI Agent</span>
+              <span className="text-primary/90">Intelligent Documentation Agent</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-primary leading-tight">
-              Your Intelligent
+              Your Medical Records
               <br />
-              <span className="text-secondary">Medical Co-pilot</span>
+              <span className="text-secondary">AI Assistant</span>
             </h1>
             <p className="text-xl text-secondary/80 max-w-2xl mx-auto">
-              Experience autonomous documentation with an AI agent that learns, adapts, 
-              and proactively streamlines your clinical workflow
+              Experience autonomous documentation with an AI agent that understands,
+              organizes, and optimizes your medical records in real-time
             </p>
             <div className="flex justify-center gap-4">
               <Button 
@@ -63,7 +82,7 @@ export const TerminalHero = () => {
                 className="bg-primary hover:bg-primary/90 text-white group transition-all duration-300"
               >
                 <Terminal className="mr-2 group-hover:rotate-12 transition-transform" />
-                Launch Agent
+                Start Analysis
               </Button>
               <Button 
                 size="lg" 
@@ -71,7 +90,7 @@ export const TerminalHero = () => {
                 className="border-primary/20 text-primary hover:bg-primary/5 group"
               >
                 <Sparkles className="mr-2 group-hover:scale-110 transition-transform" />
-                View Capabilities
+                View Features
               </Button>
             </div>
           </div>
