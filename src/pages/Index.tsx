@@ -1,12 +1,61 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Brain, FileText, Sparkles, Clock, Shield } from "lucide-react";
+import { HeroSection } from "@/components/HeroSection";
+import { FeatureCard } from "@/components/FeatureCard";
+import { NewsletterSection } from "@/components/NewsletterSection";
+
+const features = [
+  {
+    icon: Brain,
+    title: "AI-Powered Analysis",
+    description: "Advanced natural language processing for accurate medical documentation.",
+  },
+  {
+    icon: Clock,
+    title: "Save 70% Time",
+    description: "Dramatically reduce time spent on administrative tasks.",
+  },
+  {
+    icon: Shield,
+    title: "HIPAA Compliant",
+    description: "Enterprise-grade security with full HIPAA compliance.",
+  },
+  {
+    icon: FileText,
+    title: "Smart Templates",
+    description: "Customizable templates that learn from your workflow.",
+  },
+];
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-primary">
+      <HeroSection />
+      
+      <section className="py-20 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Transform Your Practice
+            </h2>
+            <p className="text-white/70 max-w-2xl mx-auto">
+              Our AI-powered platform revolutionizes medical documentation,
+              allowing you to focus more on what matters most - your patients.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <FeatureCard
+                key={feature.title}
+                {...feature}
+                className={`delay-${index * 100}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <NewsletterSection />
     </div>
   );
 };
