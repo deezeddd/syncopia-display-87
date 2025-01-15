@@ -1,5 +1,5 @@
-import { Brain, FileText, Sparkles, Clock, Shield } from "lucide-react";
-import { HeroSection } from "@/components/HeroSection";
+import { Brain, FileText, Sparkles, Terminal, Shield } from "lucide-react";
+import { TerminalHero } from "@/components/TerminalHero";
 import { FeatureCard } from "@/components/FeatureCard";
 import { NewsletterSection } from "@/components/NewsletterSection";
 
@@ -10,9 +10,9 @@ const features = [
     description: "Advanced natural language processing for accurate medical documentation.",
   },
   {
-    icon: Clock,
-    title: "Save 70% Time",
-    description: "Dramatically reduce time spent on administrative tasks.",
+    icon: Terminal,
+    title: "Smart CLI Interface",
+    description: "Intuitive command-line tools for rapid documentation processing.",
   },
   {
     icon: Shield,
@@ -29,7 +29,7 @@ const features = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-primary">
-      <HeroSection />
+      <TerminalHero />
       
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">
