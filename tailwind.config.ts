@@ -25,16 +25,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0F172A",
+          DEFAULT: "#9b87f5",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#0D9488",
+          DEFAULT: "#7E69AB",
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#FB923C",
-          foreground: "#ffffff",
+          DEFAULT: "#D6BCFA",
+          foreground: "#221F26",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -52,6 +52,11 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
+        'gradient-soft': 'linear-gradient(109.6deg, rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1%)',
+        'gradient-purple': 'linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)',
       },
       keyframes: {
         "accordion-down": {
